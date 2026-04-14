@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au Pair Grupão - Grupo VIP Gratuito</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="logo-placeholder">
+                    <!-- Substitua o src da imagem abaixo pelo link/arquivo do Logo do cabeçalho -->
+                    <img src="{{ url_for('static', path='/img/logo-aupair.png') }}" alt="Au Pair Grupão Logo"
+                        class="brand-logo">
+                </div>
+                <h1>Uma nova forma de viver sua <span class="highlight-yellow">experiência Au Pair</span> está prestes a
+                    nascer!</h1>
+                <p>Acesse o nosso <strong>Grupo VIP GRATUITO</strong> e descubra, em primeira mão, o que está chegando
+                    para transformar a forma como você se prepara e vive o <strong>Intercâmbio</strong>.</p>
+                <a href="#" class="btn btn-yellow">ACESSAR GRUPO GRATUITO!</a>
+            </div>
+            <div class="hero-image">
+                <!-- Imagem do celular real limpa -->
+                <img src="{{ url_for('static', path='/img/celulares.png') }}" class="hero-phone-img"
+                    alt="App nos Celulares">
+            </div>
+        </div>
+        <!-- Detalhe ornamental de avião (opcional, pode inserir como SVG no background via css ou image direct) -->
+        <div class="hero-ornament"></div>
+    </section>
+
+    <!-- ATTENTION SECTION -->
+    <section class="attention-section">
+        <div class="container">
+            <div class="attention-card-wrapper">
+                <div class="attention-tag">ATENÇÃO!</div>
+                <div class="attention-card">
+                    <p>As vagas para este Grupo VIP GRATUITO são limitadas e a oportunidade de ter acesso a esse
+                        conteúdo exclusivo e valioso não vai durar pra sempre.</p>
+                    <p class="attention-strong">Não deixe o medo ou a desinformação roubarem<br> seu sonho. <strong style="color: #a072b3;">O momento de agir é AGORA!</strong></p>
+                </div>
+            </div>
+            <a href="#" class="btn btn-purple">QUERO SER PIONEIRA</a>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="pain-points-section" style="background-color: #e6dfee; padding: 80px 0;">
+        <div class="container">
+            <h2><span style="color: #a072b3;">Você se sente sobrecarregada,</span><br><span class="purple-text">confusa e até com medo?</span></h2>
+            <p class="subtitle" style="color: #482361;">São milhares de informações soltas na internet...<br> Cada pessoa fala uma coisa...</p>
+
+            <div class="cards-grid pain-cards">
+                <div class="card shadow-card">
+                    <div class="card-icon">
+                        <i class="fa-regular fa-flag"></i>
+                    </div>
+                    <h3 style="color: #a072b3;">Se você está no Brasil,<br><strong>talvez esteja pensando:</strong></h3>
+                    <ul style="color: #a072b3;">
+                        <li style="color: #a072b3;">"Será que eu vou conseguir?"</li>
+                        <li style="color: #a072b3;">"Meu inglês é suficiente?"</li>
+                        <li style="color: #a072b3;">"Como eu escolho uma família sem errar?"</li>
+                    </ul>
+                </div>
+                <div class="card shadow-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3 style="color: #a072b3;">Se você já está nos EUA,<br><strong>talvez esteja sentindo:</strong></h3>
+                    <ul style="color: #a072b3;">
+                        <li style="color: #a072b3;">"Dificuldade de se adaptar"</li>
+                        <li style="color: #a072b3;">"Saudades de casa"</li>
+                        <li style="color: #a072b3;">"Incerta por não ter ninguém entendendo sua dor"</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="pain-footer"><strong><span style="color: #482361;">E no meio disso tudo… parece que todo mundo está bem,</span> <span style="color: #a072b3;">menos
+                    você!</span></strong></p>
+        </div>
+    </section>
+
+    <!-- VIP GROUP SECTION -->
+    <section class="vip-group-section">
+        <div class="container">
+            <h2>E o nosso <span class="highlight-yellow">Grupo VIP GRATUITO</span> no WhatsApp<br>é a sua oportunidade
+                ÚNICA de:</h2>
+
+            <div class="cards-grid glass-cards">
+                <div class="glass-card">
+                    <div class="card-icon-glass">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3>Histórias</h3>
+                    <p>Encontrar histórias autênticas de quem já passou e de quem está passando agora por cada fase do
+                        Au Pair: desde a escolha da agência e o match até a adaptação com a família, a rotina nos EUA, a
+                        solidão, o rematch…</p>
+                </div>
+                <div class="glass-card">
+                    <div class="card-icon-glass">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3>Direcionamento</h3>
+                    <p>Se você ainda está no Brasil, vai entender a realidade antes de tomar decisões importantes. Se
+                        você já está nos EUA, vai ter um lugar para pedir ajuda, trocar experiências, fazer amizades e
+                        não se sentir sozinha.</p>
+                </div>
+                <div class="glass-card">
+                    <div class="card-icon-glass">
+                        <i class="fa-solid fa-person-walking"></i>
+                    </div>
+                    <h3>Experiência</h3>
+                    <p>Não são dicas genéricas da internet, são vivências reais de quem entende exatamente o que você
+                        está vivendo — ou prestes a viver.</p>
+                </div>
+            </div>
+
+            <div class="center-btn">
+                <a href="#" class="btn btn-yellow">ACESSAR GRUPO VIP GRATUITO!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGINE ACCESS SECTION -->
+    <section class="imagine-section">
+        <div class="container imagine-container">
+            <div class="imagine-content">
+                <h2>Imagine ter <strong>acesso a:</strong></h2>
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Conexão genuína com outras Au Pairs que sabem exatamente
+                            o que você está sentindo</span>
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Conteúdo exclusivo e prático
+                            com base em experiências reais</span>
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Suporte emocional e informacional
+                            durante todas as fases do programa</span>
+                    </li>
+                </ul>
+                <div class="imagine-logos">
+                    <img src="{{ url_for('static', path='/img/logo-aupair-2.png') }}" alt="Logo Au Pair">
+                    <img src="{{ url_for('static', path='/img/insta-aupair.png') }}" alt="Instagram Au Pair">
+                </div>
+            </div>
+            <div class="imagine-image">
+                <!-- Girls image placeholder: Substituuir pela imagem das duas AuPairs do PSD -->
+                <div class="girls-placeholder" style="border-radius: 20px; overflow:hidden;">
+                    <img src="{{ url_for('static', path='/img/meninas.png') }}" alt="Duas Au Pairs"
+                        style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA COMMINUTY SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-icon">
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+            <h2>PRONTA PARA FAZER PARTE<br>DESSA COMUNIDADE EXCLUSIVA?</h2>
+            <p style="color: #482361;">Não perca essa chance única de<br> transformar sua experiência Au Pair!</p>
+            <a href="#" class="btn btn-purple">QUERO TER ACESSO GRATUITO!</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col" style="flex: 2; padding-right: 20px;">
+                <h3>Au Pair Grupão™</h3>
+                <p>A maior comunidade brasileira dedicada<br> ao universo do intercâmbio Au Pair</p>
+            </div>
+            <div class="footer-col" style="flex: 1.5;">
+                <h3>Contato</h3>
+                <p style="display: flex; align-items: center; gap: 8px;"><i class="fa-regular fa-envelope"></i>
+                    contato@aupairgrupao.com.br</p>
+            </div>
+            <div class="footer-col" style="flex: 1;">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Au Pair Grupão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
