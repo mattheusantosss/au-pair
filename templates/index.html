@@ -13,6 +13,14 @@
     <!-- FontAwesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+
+    <!-- CSS Hub / Kaizen Tracking Script -->
+    <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//css.kaizenseo.com.br/cdn/acss.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
 </head>
 
 <body>
@@ -279,6 +287,54 @@
                 modal.style.display = "none";
             }
         }
+
+        // --- CSS Hub / Kaizen Funcionalidades ---
+        function getCSSToken() {
+            const name = 'css_token=';
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1);
+                if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+            }
+            return null;
+        }
+
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btnSubmit = e.target.querySelector('button[type="submit"]');
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = "Enviando...";
+
+            const leadData = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                status: document.getElementById('status').value,
+                css_token: getCSSToken()
+            };
+
+            fetch('/api/lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(leadData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert("Sucesso! Em breve você receberá novidades.");
+                modal.style.display = "none";
+                btnSubmit.disabled = false;
+                btnSubmit.innerText = "FINALIZAR E ENTRAR NO GRUPO";
+                e.target.reset(); // Limpa form
+            })
+            .catch(err => {
+                console.error("Erro:", err);
+                alert("Ocorreu um erro. Tente novamente!");
+                btnSubmit.disabled = false;
+                btnSubmit.innerText = "FINALIZAR E ENTRAR NO GRUPO";
+            });
+        });
     </script>
 </body>
 
