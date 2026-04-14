@@ -207,6 +207,79 @@
         </div>
     </footer>
 
+    <!-- Modal Formulário VIP -->
+    <div id="leadModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Garantir Meu Acesso VIP</h2>
+            <p>Preencha os dados abaixo rapidamente para receber o link do grupo.</p>
+            
+            <!-- Usamos action="/submit-lead" no futuro para o Kaizen Hub webhook post, por enquanto não aciona. -->
+            <form id="leadForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <!-- Campo do Whatsapp com Máscara e tipagem local -->
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" maxlength="15" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status" required>
+                        <option value="" disabled selected>Selecione seu status...</option>
+                        <option value="Futura Au Pair">Futura Au Pair</option>
+                        <option value="Au Pair">Au Pair</option>
+                        <option value="Ex Au Pair">Ex Au Pair</option>
+                        <option value="Host Family">Host Family</option>
+                        <option value="Prestador de Serviço">Prestador de Serviço</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-purple btn-full">FINALIZAR E ENTRAR NO GRUPO</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Funcionalidades de Tela -->
+    <script>
+        // Máscara de Telefone BR para Whatsapp Format
+        document.getElementById('whatsapp').addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
+        // Lógica de Gatilho de Janela Modal
+        const modal = document.getElementById("leadModal");
+        // Engatando botões de adesão do Hero e CTA global da página
+        const btns = document.querySelectorAll(".btn-yellow, .btn-purple:not(.btn-full)");
+        const span = document.querySelector(".close-modal");
+
+        // Abre modal para cliques de captação
+        btns.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.style.display = "flex";
+            });
+        });
+
+        // Fecha modal no 'X'
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Fecha modal ao pisar fora da caixa na área escura
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
